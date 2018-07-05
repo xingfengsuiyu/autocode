@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.auto.generation.core.mapper.AutoGenerateTableMapper">
+
+    <resultMap id="fieldMySql" type="com.auto.generation.core.table.FieldProperty">
+        <result column="COLUMN_NAME" property="name" jdbcType="VARCHAR"/>
+        <result column="CHARACTER_MAXIMUM_LENGTH" property="length" jdbcType="INTEGER"/>
+        <result column="NUMERIC_SCALE" property="decimalPlaces" jdbcType="INTEGER"/>
+        <result column="DATA_TYPE" property="type" jdbcType="VARCHAR"/>
+        <result column="IS_NULLABLE" property="isNull" jdbcType="VARCHAR"/>
+        <result column="COLUMN_DEFAULT" property="defaultValue" jdbcType="VARCHAR"/>
+        <result column="COLUMN_COMMENT" property="description" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <resultMap id="tableMySql" type="com.auto.generation.core.table.TableProperty">
+        <result column="TABLE_NAME" property="tableName" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <resultMap id="indexMySql" type="com.auto.generation.core.table.FieldIndexProperty">
+        <result column="KEY_NAME" property="idxName" jdbcType="VARCHAR"/>
+        <result column="COLUMN_NAME" property="name" jdbcType="INTEGER"/>
+        <!--<result column="DATA_TYPE" property="idxType" jdbcType="VARCHAR"/>-->
+        <result column="INDEX_TYPE" property="idxMethod" jdbcType="VARCHAR"/>
+        <result column="INDEX_COMMENT" property="idxDescript" jdbcType="VARCHAR"/>
+    </resultMap>
+    <update id="executeSql">
+      ${sql}
+    </update>
+
+    <select id="queryTableFieldByMySql" resultMap="fieldMySql">
+        SELECT  COLUMN_NAME,
+        IFNULL(CHARACTER_MAXIMUM_LENGTH,NUMERIC_PRECISION) AS CHARACTER_MAXIMUM_LENGTH,
+        NUMERIC_SCALE,DATA_TYPE,
+        CASE IS_NULLABLE
+        WHEN 'YES' THEN 'NULL'
+        WHEN  'NO' THEN 'NOT NULL'
+        END AS IS_NULLABLE,
+	IFNULL(COLUMN_DEFAULT,'NULL') AS COLUMN_DEFAULT,COLUMN_COMMENT FROM information_schema.COLUMNS WHERE TABLE_NAME = #{tableName} AND table_schema = #{databaseName} AND COLUMN_KEY != "PRI"
+    </select>
+
+    <select id="queryAllTableByMySql" resultMap="tableMySql">
+        SELECT TABLE_NAME FROM information_schema.`TABLES` WHERE table_schema = #{databaseName}
+    </select>
+
+    <select id="queryTableFieldIndexByMySql" resultMap="indexMySql">
+        SHOW INDEX FROM ${tableName} WHERE KEY_NAME != 'PRIMARY'
+    </select>
+    <select id="queryAllTableByOracle" resultType="com.auto.generation.core.table.FieldProperty">
+
+    </select>
+
+
+    <select id="queryTableFieldByOracle" resultType="com.auto.generation.core.table.FieldProperty">
+
+    </select>
+</mapper>
