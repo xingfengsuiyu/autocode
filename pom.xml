@@ -4,9 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.acme.parent</groupId>
-    <artifactId>acme</artifactId>
+    <groupId>com.auto</groupId>
+    <artifactId>auto</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-
+    <modules>
+        <module>autogeneration</module>
+    </modules>
 </project>

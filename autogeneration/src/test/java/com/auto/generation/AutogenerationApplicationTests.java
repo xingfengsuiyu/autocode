@@ -40,7 +40,6 @@ public class AutogenerationApplicationTests {
 		//autoGenerateTableSqlService.executeSql(updateSql);
 		//System.out.println(updateSql);
 		//autoGenerateTableSqlService.executeSql(str);
-
 	}
 
 	@Test
