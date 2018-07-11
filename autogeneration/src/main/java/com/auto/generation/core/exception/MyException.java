@@ -1,6 +1,6 @@
 package com.auto.generation.core.exception;
 
-/*
+/**
  * @author zc
  * @date 2018/7/2 11:40
  * @description
