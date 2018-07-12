@@ -1,7 +1,10 @@
 package com.auto.generation;
 
+import com.auto.generation.core.csm.ClazzProperty;
 import com.auto.generation.core.service.AutoGenerateTableService;
 import com.auto.generation.core.service.AutoGenerateTableSqlService;
+import com.auto.generation.core.util.GenerateControllerUtil;
+import com.auto.generation.core.util.GenerateServiceUtil;
 import com.auto.generation.example2.entity2.TestEntity4;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -54,4 +57,14 @@ public class AutogenerationApplicationTests {
 
 	}
 
+	@Test
+	public void generateJavaClass() {
+		ClazzProperty clazzProperty = new ClazzProperty();
+		clazzProperty.setClassUrl("E:\\workspace\\idea\\auto\\autogeneration\\src\\main\\java\\com\\auto\\generation\\core\\util\\");
+		clazzProperty.setPackageName("com.auto.generation.core.util");
+		clazzProperty.setName("Test");
+
+		GenerateControllerUtil.generateController(clazzProperty);
+		GenerateServiceUtil.generateService(clazzProperty);
+	}
 }
