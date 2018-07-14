@@ -84,7 +84,7 @@ public class GenerateControllerUtil {
 			sb.append("\r\n");
 			sb.append("\t");
 			sb.append("\t");
-			sb.append(serviceLowCaseFirst + ".add(add);");
+			sb.append(serviceLowCaseFirst + ".add(entity);");
 			sb.append("\r\n");
 			sb.append("\t");
 			sb.append("}");
@@ -97,7 +97,7 @@ public class GenerateControllerUtil {
 			sb.append("\r\n");
 			sb.append("\t");
 			sb.append("\t");
-			sb.append(serviceLowCaseFirst + ".update(add);");
+			sb.append(serviceLowCaseFirst + ".update(entity);");
 			sb.append("\r\n");
 			sb.append("\t");
 			sb.append("}");

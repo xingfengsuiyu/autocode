@@ -91,6 +91,12 @@ public class GenerateServiceUtil {
 			sb.append("\r\n");
 			sb.append("import com.github.pagehelper.PageHelper;");
 			sb.append("\r\n");
+			//sb.append("import org.springframework.data.redis.core.RedisTemplate;");
+			//sb.append("\r\n");
+			//sb.append("import org.springframework.data.redis.core.ValueOperations;");
+			//sb.append("\r\n");
+			//sb.append("import java.util.concurrent.TimeUnit;");
+			sb.append("\r\n");
 			sb.append("import " + clazzProperty.getPackageName() + ".service." + clazzProperty.getName() + "Service;");
 			sb.append("\r\n");
 			sb.append("import " + clazzProperty.getPackageName() + ".entity." + clazzProperty.getName() + "Entity;");
@@ -116,7 +122,7 @@ public class GenerateServiceUtil {
 			sb.append("\r\n");
 			sb.append("\t");
 			sb.append("\t");
-			sb.append("List<" + clazzProperty.getName() + "Entity> listEntity = "+ mapperLowCaseFirst + ".page(pageNum, pageSize);");
+			sb.append("List<" + clazzProperty.getName() + "Entity> listEntity = "+ mapperLowCaseFirst + ".page();");
 			sb.append("\r\n");
 			sb.append("\t");
 			sb.append("\t");
@@ -140,7 +146,7 @@ public class GenerateServiceUtil {
 			sb.append("\r\n");
 			sb.append("\t");
 			sb.append("\t");
-			sb.append(mapperLowCaseFirst + ".add(add);");
+			sb.append(mapperLowCaseFirst + ".add(entity);");
 			sb.append("\r\n");
 			sb.append("\t");
 			sb.append("}");
@@ -150,7 +156,7 @@ public class GenerateServiceUtil {
 			sb.append("\r\n");
 			sb.append("\t");
 			sb.append("\t");
-			sb.append(mapperLowCaseFirst + ".update(add);");
+			sb.append(mapperLowCaseFirst + ".update(entity);");
 			sb.append("\r\n");
 			sb.append("\t");
 			sb.append("}");
