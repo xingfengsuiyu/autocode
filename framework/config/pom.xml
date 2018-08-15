@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.framework</groupId>
 		<artifactId>framework</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.2-SNAPSHOT</version>
 	</parent>
 	<artifactId>config</artifactId>
 	<packaging>jar</packaging>
@@ -20,7 +20,7 @@
 		<dependency>
 			<groupId>com.framework</groupId>
 			<artifactId>common</artifactId>
-			<version>${com.framework.version}</version>
+			<version>0.0.2-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 

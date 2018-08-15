@@ -5,13 +5,12 @@
 
 	<groupId>com.framework</groupId>
 	<artifactId>framework</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<modules>
 		<module>common</module>
 		<module>register</module>
 		<module>config</module>
 		<module>gateway</module>
-		<module>client</module>
 		<module>client</module>
 	</modules>
 	<packaging>pom</packaging>
@@ -33,7 +32,6 @@
 		<jsondoc.version>1.2.19</jsondoc.version>
 		<fastjson.version>1.2.47</fastjson.version>
 		<spring-cloud.version>Finchley.SR1</spring-cloud.version>
-		<com.framework.version>0.0.1-SNAPSHOT</com.framework.version>
 	</properties>
 
 	<dependencies>

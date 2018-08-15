@@ -1,4 +1,4 @@
-package com.framework.user.demo;
+package com.framework.user;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
