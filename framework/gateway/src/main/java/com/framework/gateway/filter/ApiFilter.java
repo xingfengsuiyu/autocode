@@ -10,6 +10,7 @@ import com.framework.common.utils.AesEncryptUtils;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
@@ -32,6 +33,7 @@ import java.util.Map;
  * run 为过滤器执行的具体逻辑，在这里可以做很多事情，比如：权限判断、合法性校验等。
  */
 @Component
+@RefreshScope
 public class ApiFilter extends ZuulFilter {
 
     @Value("${api.encrypt.key}")
