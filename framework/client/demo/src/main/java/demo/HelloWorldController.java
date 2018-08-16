@@ -15,7 +15,7 @@ public class HelloWorldController {
 	@Autowired
 	private ApiService apiService;
 
-	@RequestMapping("hello")
+	@RequestMapping("/hello")
 	public String hello() {
 		return	apiService.index();
 	}
