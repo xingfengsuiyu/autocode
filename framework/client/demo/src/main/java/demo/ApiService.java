@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @create 2018-08-15 20:38
  **/
 @FeignClient(value = "user",fallback = ApiServiceError.class)
-@Service
 public interface ApiService {
 
 	@RequestMapping(value = "/hello",method = RequestMethod.GET)
