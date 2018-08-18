@@ -1,4 +1,4 @@
-package demo;
+package demo.feign;
 
 import org.springframework.stereotype.Component;
 

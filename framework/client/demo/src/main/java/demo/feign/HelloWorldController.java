@@ -1,6 +1,5 @@
-package demo;
+package demo.feign;
 
-import org.jsondoc.core.annotation.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @create 2018-08-15 21:29
  **/
 @RestController
+@RequestMapping("/feign")
 public class HelloWorldController {
 
 	@Autowired
