@@ -1,6 +1,6 @@
-import demo.DemoApplication;
-import demo.transcation.entity.User;
-import demo.transcation.service.UserService;
+import com.framework.demo.DemoApplication;
+import com.framework.demo.transcation.entity.User;
+import com.framework.demo.transcation.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
