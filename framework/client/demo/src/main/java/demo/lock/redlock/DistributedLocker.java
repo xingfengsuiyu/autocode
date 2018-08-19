@@ -1,6 +1,5 @@
 package demo.lock.redlock;
 
-import com.zc.feign.lock.redlock.UnableToAquireLockException;
 
 /**
  *  获取锁管理类
